@@ -5,6 +5,9 @@ import Vue from 'vue'
 import 'metismenu'
 import vuetify from '@/plugins/vuetify' // path to vuetify export
 import 'jquery-slimscroll/jquery.slimscroll.min'
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
+import VuetifyDialog from "vuetify-dialog";
+import "vuetify-dialog/dist/vuetify-dialog.min.css";
 import App from './App'
 import * as firebase from 'firebase'
 import router from './router'
@@ -16,10 +19,11 @@ import EditMeetupDateDialog from './components/Meetup/Edit/EditMeetupDateDialog.
 import EditMeetupTimeDialog from './components/Meetup/Edit/EditMeetupTimeDialog.vue'
 import RegisterDialog from './components/Meetup/Registration/RegisterDialog.vue'
 import './assets/js/inspinia'
-import 'material-design-icons-iconfont/dist/material-design-icons.css'
+
+
 // Vue.use(Vuetify)
 Vue.config.productionTip = false
-
+Vue.use(VuetifyDialog, { context: { vuetify } })
 Vue.filter('date', DateFilter)
 Vue.component('app-alert', AlertCmp)
 Vue.component('app-edit-meetup-details-dialog', EditMeetupDetailsDialog)
